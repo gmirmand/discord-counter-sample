@@ -30,7 +30,9 @@ function loop(i) {
         "credentials": "include"
     }).then((response) => {
         if (response.ok) {
-            timeoutLoop(i + 1);
+            setTimeout(() => {
+                loop(i + 1)
+            }, Math.floor(Math.random() * (1000 - 300 + 1)) + 300)
         } else {
             onError(i)
         }
@@ -41,13 +43,9 @@ function loop(i) {
 
 function onError(i) {
     console.error('error on loop' + i);
-    timeoutLoop(i)
-}
-
-function timeoutLoop(i) {
     setTimeout(() => {
-        loop(i)
-    }, Math.floor(Math.random() * (1000 - 300 + 1)) + 300)
+        loop(i )
+    }, 2000)
 }
 
 loop(1)
