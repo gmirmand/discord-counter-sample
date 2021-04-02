@@ -24,15 +24,30 @@ function loop(i) {
         },
         "referrer": "https://discord.com/channels/308688915492110337/827658307128524870",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"content\":"+ i +",\"\":\"827658340615061504\",\"tts\":false}",
+        "body": "{\"content\":" + i + ",\"\":\"827658340615061504\",\"tts\":false}",
         "method": "POST",
         "mode": "cors",
         "credentials": "include"
-    }).then(() => {
-        setTimeout(() => {
-            loop(i + 1)
-        }, Math.floor(Math.random() * (1400 - 500 + 1)) + 500)
-    } )
+    }).then((response) => {
+        if (response.ok) {
+            timeoutLoop(i + 1);
+        } else {
+            onError(i)
+        }
+    }).catch(() => {
+        onError(i)
+    })
+}
+
+function onError(i) {
+    console.error('error on loop' + i);
+    timeoutLoop(i)
+}
+
+function timeoutLoop(i) {
+    setTimeout(() => {
+        loop(i)
+    }, Math.floor(Math.random() * (1000 - 300 + 1)) + 300)
 }
 
 loop(1)
