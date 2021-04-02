@@ -32,7 +32,7 @@ function loop(i) {
         if (response.ok) {
             setTimeout(() => {
                 loop(i + 1)
-            }, Math.floor(Math.random() * (1000 - 500 + 1)) + 500)
+            }, Math.floor(Math.random() * (1000 - 600 + 1)) + 600)
         } else {
             onError(i)
         }
