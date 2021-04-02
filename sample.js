@@ -8,7 +8,7 @@
 // Replace the "+ i +" in the body:content with your message (Don't forget to remove the nounce in your fetch call)
 // Paste the whole script into the chrome console
 
-function loop(i) {
+const loop = (i) => {
     fetch("https://discord.com/api/v8/channels/827658307128524870/messages", {
         "headers": {
             "accept": "*/*",
@@ -41,10 +41,10 @@ function loop(i) {
     })
 }
 
-function onError(i) {
+const onError = (i) => {
     console.error('error on loop' + i);
     setTimeout(() => {
-        loop(i )
+        loop(i)
     }, 2000)
 }
 
