@@ -9,30 +9,31 @@
 // Paste the whole script into the chrome console
 
 const loop = (i) => {
-    fetch("https://discord.com/api/v8/channels/827658307128524870/messages", {
-        "headers": {
-            "accept": "*/*",
-            "accept-language": "fr",
-            "authorization": "mfa.acyAwhoIy9GfY69X9ZYhJuxbmf3UzvGs39RUg_aWbgVxuM_-xqulp95TMoz0qRv5xICu8lu4nw0J-j8MzoYt",
-            "content-type": "application/json",
-            "sec-ch-ua": "\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"",
-            "sec-ch-ua-mobile": "?0",
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-origin",
-            "x-super-properties": "eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6ImZyLUZSIiwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzg5LjAuNDM4OS4xMTQgU2FmYXJpLzUzNy4zNiIsImJyb3dzZXJfdmVyc2lvbiI6Ijg5LjAuNDM4OS4xMTQiLCJvc192ZXJzaW9uIjoiMTAiLCJyZWZlcnJlciI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwicmVmZXJyaW5nX2RvbWFpbiI6Ind3dy5nb29nbGUuY29tIiwic2VhcmNoX2VuZ2luZSI6Imdvb2dsZSIsInJlZmVycmVyX2N1cnJlbnQiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInJlZmVycmluZ19kb21haW5fY3VycmVudCI6Ind3dy5nb29nbGUuY29tIiwic2VhcmNoX2VuZ2luZV9jdXJyZW50IjoiZ29vZ2xlIiwicmVsZWFzZV9jaGFubmVsIjoic3RhYmxlIiwiY2xpZW50X2J1aWxkX251bWJlciI6ODEyOTcsImNsaWVudF9ldmVudF9zb3VyY2UiOm51bGx9"
-        },
-        "referrer": "https://discord.com/channels/308688915492110337/827658307128524870",
-        "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"content\":" + i + ",\"\":\"827658340615061504\",\"tts\":false}",
-        "method": "POST",
-        "mode": "cors",
-        "credentials": "include"
-    }).then((response) => {
+fetch("https://discord.com/api/v9/channels/1009479047295799316/messages", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+    "authorization": "MTg3OTY2NDkwNzQwMjYwODY0.G3KV5s.8PX3oursHOhFNnnnq--kec56cJo6rcRS9TCOCo",
+    "content-type": "application/json",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-debug-options": "bugReporterEnabled",
+    "x-discord-locale": "fr",
+    "x-discord-timezone": "Europe/Paris",
+    "x-super-properties": "eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6ImZyLUZSIiwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzExMy4wLjU2NzIuMTI3IFNhZmFyaS81MzcuMzYiLCJicm93c2VyX3ZlcnNpb24iOiIxMTMuMC41NjcyLjEyNyIsIm9zX3ZlcnNpb24iOiIxMCIsInJlZmVycmVyIjoiaHR0cHM6Ly9nYXJ0aWNwaG9uZS5jb20vIiwicmVmZXJyaW5nX2RvbWFpbiI6ImdhcnRpY3Bob25lLmNvbSIsInJlZmVycmVyX2N1cnJlbnQiOiIiLCJyZWZlcnJpbmdfZG9tYWluX2N1cnJlbnQiOiIiLCJyZWxlYXNlX2NoYW5uZWwiOiJzdGFibGUiLCJjbGllbnRfYnVpbGRfbnVtYmVyIjoyMTEwNzIsImNsaWVudF9ldmVudF9zb3VyY2UiOm51bGx9"
+  },
+  "referrer": "https://discord.com/channels/@me/1009479047295799316",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": "{\"content\":\"getget le boss\",\"nonce\":\"1126588600851365888\",\"tts\":false,\"flags\":0}",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+}).then((response) => {
         if (response.ok) {
             setTimeout(() => {
                 loop(i + 1)
-            }, Math.floor(Math.random() * (1000 - 600 + 1)) + 600)
+            }, Math.floor(Math.random() * (1000 - 600 + 1)) + 600) // edit if you want to change the timing
         } else {
             onError(i)
         }
